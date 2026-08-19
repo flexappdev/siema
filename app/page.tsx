@@ -1,5 +1,5 @@
 import { PAINTINGS } from "@/lib/paintings";
-import { PaintingCard } from "@/components/PaintingCard";
+import { GallerySearch } from "@/components/GallerySearch";
 import Link from "next/link";
 
 export const metadata = {
@@ -82,18 +82,8 @@ export default function GalleryPage() {
         <span>Framed from <span style={{ color: "var(--foreground-subtle)" }}>$100</span></span>
       </div>
 
-      {/* Gallery grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: 20,
-        }}
-      >
-        {PAINTINGS.map((painting) => (
-          <PaintingCard key={painting.id} painting={painting} />
-        ))}
-      </div>
+      {/* Search + gallery grid */}
+      <GallerySearch paintings={PAINTINGS} />
     </div>
   );
 }

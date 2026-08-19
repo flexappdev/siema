@@ -62,7 +62,7 @@ export function Nav() {
           marginBottom: 18,
           fontSize: 15,
           fontWeight: 800,
-          color: "#0a0a0a",
+          color: "#ffffff",
           letterSpacing: "-0.03em",
           textDecoration: "none",
         }}

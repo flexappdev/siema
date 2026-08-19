@@ -59,5 +59,6 @@ Copy from `/home/matsiems/context-2026/agents/.env` — see `.env.local` for req
 
 ## Version History
 
+- **v0.2.0** — 2026-08-19 — Mat Siems `#006699` accent; sticky top Header (SIEMA brand + search + Log in / Register); sticky Footer (Index link + Random Painting); home search filter; `/paintings` index route with full metadata (id, slug, year, medium, dims, tags, S3 key, description).
 - **v0.1.1** — 2026-08-19 — Rotate S3 access key; wire real Stripe Checkout Sessions in `/api/checkout` (gated on env).
 - **v0.1.0** — 2026-08-19 — Initial build: 20 paintings gallery + generate + purchase tiers, S3 upload, wikai-style UI

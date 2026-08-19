@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const THEME_INIT = `(function(){try{var t=localStorage.getItem('siema:theme');if(t!=='light'&&t!=='dark')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
 
@@ -41,9 +43,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body suppressHydrationWarning>
         <Nav />
-        <main style={{ paddingLeft: 64 }}>
-          {children}
-        </main>
+        <div style={{ paddingLeft: 64, minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
+          <Header />
+          <main style={{ flex: 1 }}>
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
