@@ -22,7 +22,7 @@ AI-assisted sketch painting gallery by Siema. Browse 20 original works, generate
 - MongoDB (`siema` DB)
 - AWS S3 (`com27/siema/` prefix) for painting storage
 - Auth.js v5 + Google OAuth (scaffold — add keys to activate)
-- Stripe (scaffold — add keys to activate)
+- Stripe (installed — add `STRIPE_SECRET_KEY` + price IDs to activate checkout)
 - Pollinations.ai Flux for AI generation (free tier)
 
 ## Local Dev
@@ -51,7 +51,7 @@ Images live at: `https://com27.s3.eu-west-2.amazonaws.com/siema/<slug>.png`
    - `STRIPE_PRICE_POSTER` — $10
    - `STRIPE_PRICE_FRAME` — $100
 3. Add `STRIPE_SECRET_KEY` and `STRIPE_PUBLISHABLE_KEY`
-4. `npm install stripe` to activate checkout route
+4. Restart the dev server — `app/api/checkout/route.ts` will create real Stripe sessions once both `STRIPE_SECRET_KEY` and the matching price ID are present (otherwise it returns the "coming soon" placeholder).
 
 ## Environment
 
@@ -59,4 +59,5 @@ Copy from `/home/matsiems/context-2026/agents/.env` — see `.env.local` for req
 
 ## Version History
 
+- **v0.1.1** — 2026-08-19 — Rotate S3 access key; wire real Stripe Checkout Sessions in `/api/checkout` (gated on env).
 - **v0.1.0** — 2026-08-19 — Initial build: 20 paintings gallery + generate + purchase tiers, S3 upload, wikai-style UI
