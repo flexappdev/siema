@@ -6,15 +6,18 @@ AI-assisted sketch painting gallery by Siema. Browse 20 original works, generate
 
 ## Features
 
-- **Gallery** — 20 sketch paintings with titles, descriptions, and tags
-- **Painting detail** — full-size view with purchase options panel
-- **Generate** — create a custom Siema-style painting for $1 (Pollinations Flux AI)
+- **Gallery (`/`)** — 20 sketch paintings with search filter across title, description, medium, tags
+- **Index (`/paintings`)** — full-metadata table (id, slug, year, medium, dimensions, tags, S3 key, description) with `?q=` prefilter
+- **Painting detail (`/painting/[slug]`)** — full-size view with purchase options panel
+- **Generate (`/generate`)** — custom Siema-style painting for $1 (Pollinations Flux AI)
+- **Sticky Header** — SIEMA brand · search (→ `/paintings?q=…`) · Log in · Register (anchor points `#login-link` / `#register-link` for Auth.js activation)
+- **Sticky Footer** — painting count · Index link · `⚄ Random Painting` button
 - **Purchase tiers**:
   - $1 — 4K Digital Download (Frame TV ready, 3840×2160)
   - $1 — Generate your own unique painting
   - $10 — A2 giclée poster print
   - $100 — Museum-quality framed print
-- **Dark/light theme** — warm gold (#d4a853) accent, wikai-inspired layout
+- **Dark/light theme** — Mat Siems `#006699` accent (light theme `#005580`), wikai-inspired layout
 
 ## Tech Stack
 
