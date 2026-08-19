@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root,
+[data-theme='dark'] {
+  --background: #0a0a0a;
+  --surface: #111112;
+  --card: #161618;
+  --card-hover: #1e1e21;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.16);
+
+  --foreground: #f5f0e8;
+  --foreground-subtle: #c9bfa8;
+  --foreground-muted: #7a7060;
+
+  --accent: #d4a853;
+  --accent-dim: rgba(212,168,83,0.15);
+  --accent-glow: rgba(212,168,83,0.3);
+
+  --header-glass: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 80%, rgba(10,10,10,0) 100%);
+  --footer-glass: linear-gradient(0deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 70%, rgba(10,10,10,0) 100%);
+  --nav-bg: rgba(12,12,14,0.88);
+}
+
+[data-theme='light'] {
+  --background: #f9f6f0;
+  --surface: #f0ebe0;
+  --card: #e8e1d4;
+  --card-hover: #ddd5c4;
+  --border: rgba(0,0,0,0.1);
+  --border-hover: rgba(0,0,0,0.2);
+
+  --foreground: #1a1612;
+  --foreground-subtle: #3d3528;
+  --foreground-muted: #7a6e5a;
+
+  --accent: #b8862a;
+  --accent-dim: rgba(184,134,42,0.12);
+  --accent-glow: rgba(184,134,42,0.25);
+
+  --header-glass: linear-gradient(180deg, rgba(249,246,240,0.97) 0%, rgba(249,246,240,0.75) 80%, rgba(249,246,240,0) 100%);
+  --footer-glass: linear-gradient(0deg, rgba(249,246,240,0.97) 0%, rgba(249,246,240,0.7) 70%, rgba(249,246,240,0) 100%);
+  --nav-bg: rgba(240,235,224,0.92);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--background);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* CTA button */
+.cta-generate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #0a0a0a;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 150ms;
+}
+.cta-generate:hover { opacity: 0.85; }
+
+/* Painting card shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, var(--card) 25%, var(--card-hover) 50%, var(--card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
