@@ -14,7 +14,7 @@ const SOURCE_DIR = "/mnt/c/ABC/MEDIA/IMAGES/2026/siema";
 const client = new S3Client({
   region: S3_REGION,
   credentials: {
-    accessKeyId: process.env.S3_ACCESS_KEY ?? "AKIAWOXGQTTKLZGGFO6S",
+    accessKeyId: process.env.S3_ACCESS_KEY ?? "AKIAWOXGQTTKN634WNJX",
     secretAccessKey: process.env.S3_SECRET_ACCESS_KEY ?? "",
   },
 });
