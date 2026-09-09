@@ -9,6 +9,6 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 <!-- END:nextjs-agent-rules -->
 
 
-## SIEMA Daily
+## SIEMA Hourly
 
-For any request to generate, schedule, index, or publish a SIEMA sketch painting, read and follow `skills/siema-daily/SKILL.md` before acting. The uniqueness/source-of-truth ledger is `data/siema-index.json`.
+For any request to generate, schedule, index, or publish a SIEMA sketch painting, read and follow `skills/siema-hourly/SKILL.md` before acting. The uniqueness/source-of-truth ledger is `data/siema-index.json`.
