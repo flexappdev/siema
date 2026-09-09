@@ -7,6 +7,31 @@ Generate exactly one unique SIEMA SKETCH PAINTING from either:
 
 The default repository is `flexappdev/siema`. The default timezone is `Europe/London`.
 
+## Canonical Siema reference
+
+Siema is OPTIONAL in every painting. The story and visual explanation come first.
+
+If Siema is visible, use Mat's canonical Siema character reference as the highest-priority character-design anchor.
+
+Canonical reference traits:
+- same recognizable face and proportions as the reference;
+- curly/wavy medium-brown hair, normally tied back in a loose top knot / bun with natural stray curls;
+- rugged short beard and moustache;
+- black rectangular G3-style smart glasses with a small blue accent;
+- black hoodie with subtle handwritten `Siema` signature;
+- mature, weathered, intelligent face;
+- relaxed, mildly amused Funny Stoic expression;
+- AI architect / sketch painter / world traveller presence.
+
+Do NOT freely reinterpret Siema's face, hairstyle, age, glasses or clothing when he appears.
+
+If the canonical image reference is unavailable to an automated run, prefer in this order:
+1. omit Siema entirely and make the environment/story the subject;
+2. use a non-identifying back/over-shoulder view only if composition benefits;
+3. only as a last resort use the textual traits above.
+
+Never invent a materially different Siema.
+
 ## Triggers
 - `Siema hourly` → choose the latest high-signal unique AI story.
 - `Siema hourly: <topic>` → use the supplied topic.
@@ -60,13 +85,10 @@ Humour must support the explanation rather than overwhelm it.
 ### 5. Canonical visual contract
 Generate exactly ONE standalone landscape 16:9 image.
 
-SIEMA:
-- middle-aged AI architect/world traveller;
-- curly, slightly wild hair;
-- rugged beard;
-- black rectangular smart glasses;
-- black hoodie;
-- relaxed, mildly amused expression.
+SIEMA (OPTIONAL):
+- If Siema is shown, use the canonical Siema reference as the character anchor.
+- Preserve the reference face, tied-back curly/wavy hair, rugged short beard, black rectangular G3-style smart glasses, black hoodie and Funny Stoic expression.
+- If the canonical reference image is unavailable, omit Siema rather than improvising a different-looking character.
 
 STYLE:
 - hand-drawn architectural pen-and-ink sketch;
