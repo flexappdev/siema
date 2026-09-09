@@ -1,3 +1,5 @@
+import siemaDailyIndex from "@/data/siema-index.json";
+
 export interface Painting {
   id: string;
   slug: string;
@@ -14,10 +16,11 @@ export interface Painting {
 const S3_BASE = "https://com27.s3.eu-west-2.amazonaws.com";
 
 export function paintingUrl(s3Key: string): string {
+  if (s3Key.startsWith("/")) return s3Key;
   return `${S3_BASE}/${s3Key}`;
 }
 
-export const PAINTINGS: Painting[] = [
+const CURATED_PAINTINGS: Painting[] = [
   {
     id: "cosmic-detour",
     slug: "cosmic-detour-through-ancient-ruins",
@@ -259,6 +262,9 @@ export const PAINTINGS: Painting[] = [
     height: 941,
   },
 ];
+
+const GENERATED_PAINTINGS = siemaDailyIndex.paintings as Painting[];
+export const PAINTINGS: Painting[] = [...GENERATED_PAINTINGS, ...CURATED_PAINTINGS];
 
 export function getPainting(slug: string): Painting | undefined {
   return PAINTINGS.find((p) => p.slug === slug);
