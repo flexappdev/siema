@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "timezone": "Europe/London",
+  "seen": [
+    {
+      "title": "AI GOES NUCLEAR",
+      "topic": "Google invests in AI infrastructure in Finland and signs a long-term nuclear power deal",
+      "sourceUrl": "https://www.reuters.com/business/media-telecom/google-invest-15-billion-ai-infrastructure-finland-2026-09-09/",
+      "sourcePublisher": "Reuters",
+      "firstSeenAt": "2026-09-09T11:54:00+01:00",
+      "topicFingerprint": "2026-09-09-google-ai-infrastructure-finland-nuclear",
+      "status": "conversation-generated-seed"
+    }
+  ],
+  "paintings": []
+}
