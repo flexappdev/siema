@@ -6,7 +6,7 @@ The machine-readable source of truth is `data/siema-index.json`.
 
 ## Generated paintings
 
-_No scheduled paintings committed yet._
+- **2026-09-10 10:56 BST — NVIDIA POWERS AUSTRALIA'S AI FUTURE** — Nvidia plans an expansion of Australian AI data-centre computing capacity with local partners, targeting up to 2 GW by 2027. Source: Reuters. Image: `public/siema/2026/09/10/2026-09-10_10-56_nvidia-australia-ai-future.webp`.
 
 ## Seeded uniqueness exclusions
 

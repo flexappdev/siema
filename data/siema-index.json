@@ -10,7 +10,39 @@
       "firstSeenAt": "2026-09-09T11:54:00+01:00",
       "topicFingerprint": "2026-09-09-google-ai-infrastructure-finland-nuclear",
       "status": "conversation-generated-seed"
+    },
+    {
+      "title": "NVIDIA POWERS AUSTRALIA'S AI FUTURE",
+      "topic": "Nvidia plans an expansion of Australian AI data-centre computing capacity with local partners, targeting up to 2 GW by 2027",
+      "sourceUrl": "https://www.reuters.com/world/asia-pacific/nvidia-teams-up-with-australian-partners-build-ai-factory-capacity-2026-09-10/",
+      "sourcePublisher": "Reuters",
+      "firstSeenAt": "2026-09-10T10:56:00+01:00",
+      "topicFingerprint": "2026-09-10-nvidia-australia-ai-data-centres-2gw",
+      "status": "published"
     }
   ],
-  "paintings": []
+  "paintings": [
+    {
+      "id": "2026-09-10-1056-nvidia-australia-ai-future",
+      "slug": "nvidia-powers-australias-ai-future",
+      "title": "NVIDIA POWERS AUSTRALIA'S AI FUTURE",
+      "s3Key": "/siema/2026/09/10/2026-09-10_10-56_nvidia-australia-ai-future.webp",
+      "year": 2026,
+      "medium": "Digital pen-and-ink + watercolor sketch",
+      "description": "A Siema sketch of Australia's expanding AI data-centre buildout, with Sydney Harbour, cranes, compute infrastructure and the physical scale behind the AI boom.",
+      "tags": ["AI", "Nvidia", "Australia", "data-centres", "infrastructure"],
+      "width": 400,
+      "height": 225,
+      "generatedAt": "2026-09-10T10:56:00+01:00",
+      "timezone": "Europe/London",
+      "topic": "Nvidia plans an expansion of Australian AI data-centre computing capacity with local partners, targeting up to 2 GW by 2027",
+      "quote": "Same technology. A bigger horizon.",
+      "sourceUrl": "https://www.reuters.com/world/asia-pacific/nvidia-teams-up-with-australian-partners-build-ai-factory-capacity-2026-09-10/",
+      "sourcePublisher": "Reuters",
+      "sourcePublishedAt": "2026-09-10T00:22:02Z",
+      "topicFingerprint": "2026-09-10-nvidia-australia-ai-data-centres-2gw",
+      "imageFile": "public/siema/2026/09/10/2026-09-10_10-56_nvidia-australia-ai-future.webp",
+      "prompt": "Create exactly one standalone 16:9 SIEMA Sketch Painting about Nvidia's announced Australian AI data-centre expansion. Hand-drawn architectural pen-and-ink with loose watercolor on warm off-white paper; #006699 as the dominant tech accent; no purple; one coherent Australian scene. Use the canonical Siema reference as the character anchor: tied-back curly hair, rugged beard, black rectangular G3-style smart glasses, black hoodie, relaxed Funny Stoic expression. Show Sydney Harbour and a large believable AI compute campus under construction with cranes and power infrastructure. Title top-left: NVIDIA POWERS AUSTRALIA'S AI FUTURE. Quote bottom-left: Same technology. A bigger horizon. Signature bottom-right: Siema."
+    }
+  ]
 }
