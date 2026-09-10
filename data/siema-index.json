@@ -1,6 +1,11 @@
 {
   "version": 1,
   "timezone": "Europe/London",
+  "control": {
+    "nextMode": "top_weekly_once",
+    "authorPolicy": "optional_default_off",
+    "indexRequired": true
+  },
   "seen": [
     {
       "title": "AI GOES NUCLEAR",
