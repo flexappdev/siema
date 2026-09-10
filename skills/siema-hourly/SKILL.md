@@ -2,14 +2,19 @@
 
 ## Purpose
 Generate exactly one unique SIEMA SKETCH PAINTING from either:
-1. an explicit topic supplied by the user; or
-2. the best new AI story available at run time.
+1. an explicit topic supplied by the user;
+2. the best new AI story available at run time; or
+3. the strongest unique AI story from the previous 7 days when Top Weekly mode is requested.
 
 The default repository is `flexappdev/siema`. The default timezone is `Europe/London`.
 
+The index is mandatory. Every successful publication must update `data/siema-index.json` and `SIEMA_INDEX.md`.
+
 ## Canonical Siema reference
 
-Siema is OPTIONAL in every painting. The story and visual explanation come first.
+Siema the artist is OPTIONAL in every painting. The story and visual explanation come first.
+
+Default author policy: **omit the Siema character unless his presence materially improves the composition or joke**. The handwritten `Siema` signature remains required bottom-right even when the artist is not shown.
 
 If Siema is visible, use Mat's canonical Siema character reference as the highest-priority character-design anchor.
 
@@ -33,10 +38,19 @@ If the canonical image reference is unavailable to an automated run, prefer in t
 Never invent a materially different Siema.
 
 ## Triggers
-- `Siema hourly` → choose the latest high-signal unique AI story.
-- `Siema hourly: <topic>` → use the supplied topic.
-- `Siema sketch: <topic>` → same on-demand workflow.
-- Hourly scheduled run with no topic → latest unique AI story.
+- `Siema live` or `Siema hourly` → choose the latest high-signal unique AI story unless the ledger requests another mode.
+- `Siema live: <topic>` or `Siema hourly: <topic>` → use the supplied topic.
+- `Siema weekly` or `Siema top weekly` → choose the single strongest unique AI story from the previous 7 days.
+- `Siema sketch: <topic>` → same on-demand topic workflow.
+- Hourly scheduled run with no topic → latest unique AI story unless `data/siema-index.json.control.nextMode` overrides it.
+
+## Control flags
+Read optional `control` values from `data/siema-index.json` before topic selection.
+
+Supported values:
+- `nextMode: "top_weekly_once"` → the NEXT successful run must select exactly ONE strongest unique AI story from the previous 7 days, not a Top-5 recap. After a successful publish, set `nextMode` back to `"hourly"`.
+- `authorPolicy: "optional_default_off"` → do not show the Siema artist by default. Include him only when the scene genuinely benefits.
+- `indexRequired: true` → a run cannot be reported as successful until both machine-readable and Markdown indexes are updated.
 
 ## Required workflow
 
@@ -47,6 +61,15 @@ Never generate before checking uniqueness.
 
 ### 2. Select a topic
 If a topic is supplied, use it.
+
+If Top Weekly mode is active, search the previous 7 days and select **one** strongest story by a combination of:
+- global AI significance;
+- novelty;
+- likely long-term importance;
+- evidence quality;
+- visual potential for one coherent Siema sketch.
+
+Do not create a Top-5 board, weekly collage, dashboard or multiple-story recap. Top Weekly means exactly one story.
 
 Otherwise search current news, prioritising:
 1. AI model/research launches and breakthroughs
@@ -68,7 +91,7 @@ Reject a candidate if ANY is true:
 - the story is merely another write-up of the same underlying event already painted;
 - semantic/topic overlap with a recent painting is high enough that a normal reader would call it the same story.
 
-If rejected, move to the next best current story. Do not generate filler just to satisfy the hourly cadence.
+If rejected, move to the next best candidate. Do not generate filler just to satisfy the hourly cadence.
 
 For an explicit topic that already exists, do not silently duplicate it. Either use a materially different angle supplied by the user or report that the topic already exists.
 
@@ -85,8 +108,10 @@ Humour must support the explanation rather than overwhelm it.
 ### 5. Canonical visual contract
 Generate exactly ONE standalone landscape 16:9 image.
 
-SIEMA (OPTIONAL):
-- If Siema is shown, use the canonical Siema reference as the character anchor.
+SIEMA (OPTIONAL, DEFAULT OFF):
+- Do not include the artist merely because the brand is Siema.
+- Include Siema only when his presence clearly strengthens the visual explanation, humour or composition.
+- If shown, use the canonical Siema reference as the character anchor.
 - Preserve the reference face, tied-back curly/wavy hair, rugged short beard, black rectangular G3-style smart glasses, black hoodie and Funny Stoic expression.
 - If the canonical reference image is unavailable, omit Siema rather than improvising a different-looking character.
 
@@ -166,6 +191,8 @@ Each painting record must contain at least:
 
 Update `SIEMA_INDEX.md` newest-first in the same run.
 
+If `control.nextMode` was `top_weekly_once`, reset it to `hourly` only after image + metadata + index writes all succeed.
+
 The app automatically merges `data/siema-index.json.paintings` into the gallery.
 
 ### 9. Commit
@@ -183,6 +210,7 @@ If any required write fails, do not claim the run completed.
 
 ## Scheduled-run output
 Return a compact report with:
+- mode: HOURLY / TOP_WEEKLY / TOPIC;
 - title/topic;
 - source;
 - generated timestamp;
