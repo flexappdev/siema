@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "timezone": "Europe/London",
+  "year": 2026,
+  "status": "backfilling",
+  "startDate": "2026-01-01",
+  "targetEndMode": "today_europe_london",
+  "cursor": "2026-01-01",
+  "policy": {
+    "oneDayOneStoryOneImage": true,
+    "oneBackfillDatePerRun": true,
+    "preferUnderlyingEventDate": true,
+    "allowPublicationDateFallback": true,
+    "requireTrustworthySource": true,
+    "authorPolicy": "optional_default_off",
+    "accentColor": "#006699",
+    "forbidCollageGridMontage": true
+  },
+  "completed": [],
+  "skipped": []
+}
