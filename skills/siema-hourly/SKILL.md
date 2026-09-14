@@ -10,6 +10,31 @@ The default repository is `flexappdev/siema`. The default timezone is `Europe/Lo
 
 The index is mandatory. Every successful publication must update `data/siema-index.json` and `SIEMA_INDEX.md`.
 
+## HARD RULE — ONE NEWS ITEM PER IMAGE
+
+This is non-negotiable and overrides any batch convenience, layout preference, or prior prompt context.
+
+**ONE NEWS ITEM = ONE IMAGE FILE.**
+
+Rules:
+- Every generated Siema news image must explain exactly ONE underlying news event, topic, model launch, policy change, company move, research result, or other single story.
+- Never combine multiple news items into one image.
+- Never create a Top-5, Top-10, weekly roundup, model roundup, storyboard, montage, contact sheet, comparison board, multi-story infographic, 2x5 grid, panel grid, split-screen roundup, or collage image.
+- If the user supplies 10 news items, generate 10 separate standalone images. If the user supplies 24 hourly stories, generate 24 separate standalone images.
+- Generate batch items ONE AT A TIME. Do not place the full batch of story titles into a single image-generation prompt, because that invites a collage or grid.
+- A single image may contain multiple visual components, arrows, stages, actors, safeguards, causes or consequences only when every component explains the SAME news story.
+- Do not carry unrelated titles, characters, model names, panels, numbering or visual material from a previous Siema image into the next one.
+- Start each new story image from a clean prompt unless the user explicitly asks to edit that exact story image.
+- A visible second news headline, unrelated model launch, unrelated story, or multi-story panel makes the generation a FAILED QA result. Regenerate before publishing.
+- `Top Weekly` means choose ONE strongest weekly story and create ONE image for that story. It never means a weekly image containing several stories.
+- The 08:00 daily summary may list or link all hourly paintings in Markdown, but it must never replace them with a combined 24-story image.
+- Never crop a multi-story collage into separate images and treat the crops as compliant originals. Each published Siema must be generated as its own standalone composition for its own story.
+
+Pre-publish QA question:
+> Can a viewer describe this image as one news story without mentioning a second story?
+
+If the answer is not an immediate yes, do not publish it.
+
 ## Canonical Siema reference
 
 Siema the artist is OPTIONAL in every painting. The story and visual explanation come first.
@@ -100,13 +125,15 @@ Create:
 - short handwritten title;
 - one funny/stoic quote;
 - concise factual visual thesis;
-- complete image prompt;
+- complete image prompt scoped to ONE story only;
 - 3–6 tags.
 
 Humour must support the explanation rather than overwhelm it.
 
+For a batch request, finish this workflow for one story before beginning the next story.
+
 ### 5. Canonical visual contract
-Generate exactly ONE standalone landscape 16:9 image.
+Generate exactly ONE standalone landscape 16:9 image for exactly ONE news item.
 
 SIEMA (OPTIONAL, DEFAULT OFF):
 - Do not include the artist merely because the brand is Siema.
@@ -130,13 +157,17 @@ STYLE:
 - no collage;
 - no grid;
 - no split screen;
-- ONE SCENE = ONE IMAGE.
+- no storyboard;
+- no montage;
+- no multi-story panels;
+- ONE STORY = ONE SCENE = ONE IMAGE.
 
 TEXT:
-- title top-left;
-- short quote bottom-left;
+- one story title top-left;
+- one short quote bottom-left;
 - `Siema` signature bottom-right;
-- minimal readable text only.
+- minimal readable text only;
+- never include unrelated headlines or model names from other stories.
 
 ### 6. Timestamp and filename
 Use Europe/London local time at generation.
@@ -195,12 +226,23 @@ If `control.nextMode` was `top_weekly_once`, reset it to `hourly` only after ima
 
 The app automatically merges `data/siema-index.json.paintings` into the gallery.
 
-### 9. Commit
+### 9. Final QA before publish
+Before committing, inspect the generated image and reject it if ANY are true:
+- more than one news story is represented;
+- multiple unrelated headlines/models/events appear;
+- the composition is a grid, collage, montage, roundup, storyboard or contact sheet;
+- content from a previous story leaked into the current story;
+- the image would need to be cropped into sub-images to become compliant;
+- the title/quote/signature contract is missing or materially wrong.
+
+Only after passing this QA may the image be published and indexed.
+
+### 10. Commit
 Use a concise commit message:
 `siema: YYYY-MM-DD HH:mm <title>`
 
 A successful run means ALL are true:
-- one unique image exists in GitHub;
+- one unique standalone image exists in GitHub for one story;
 - ledger/index updated;
 - gallery metadata updated through the ledger;
 - source recorded;
