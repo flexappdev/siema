@@ -17,23 +17,90 @@ This is non-negotiable and overrides any batch convenience, layout preference, o
 **ONE NEWS ITEM = ONE IMAGE FILE.**
 
 Rules:
-- Every generated Siema news image must explain exactly ONE underlying news event, topic, model launch, policy change, company move, research result, or other single story.
+- Every generated Siema news image must explain exactly ONE underlying news event, topic, model launch, policy change, company move, research result, personality, or other single subject.
 - Never combine multiple news items into one image.
 - Never create a Top-5, Top-10, weekly roundup, model roundup, storyboard, montage, contact sheet, comparison board, multi-story infographic, 2x5 grid, panel grid, split-screen roundup, or collage image.
-- If the user supplies 10 news items, generate 10 separate standalone images. If the user supplies 24 hourly stories, generate 24 separate standalone images.
-- Generate batch items ONE AT A TIME. Do not place the full batch of story titles into a single image-generation prompt, because that invites a collage or grid.
-- A single image may contain multiple visual components, arrows, stages, actors, safeguards, causes or consequences only when every component explains the SAME news story.
+- If the user supplies 10 news items, generate 10 separate standalone images. If the user supplies 10 personalities, generate 10 separate standalone images. If the user supplies 24 hourly stories, generate 24 separate standalone images.
+- Generate batch items ONE AT A TIME. Do not place the full batch of titles or names into a single image-generation prompt, because that invites a collage or grid.
+- A single image may contain multiple visual components, arrows, stages, actors, safeguards, causes or consequences only when every component explains the SAME subject.
 - Do not carry unrelated titles, characters, model names, panels, numbering or visual material from a previous Siema image into the next one.
-- Start each new story image from a clean prompt unless the user explicitly asks to edit that exact story image.
-- A visible second news headline, unrelated model launch, unrelated story, or multi-story panel makes the generation a FAILED QA result. Regenerate before publishing.
+- Start each new subject image from a clean prompt unless the user explicitly asks to edit that exact image.
+- A visible second news headline, unrelated model launch, unrelated personality, unrelated story, or multi-story panel makes the generation a FAILED QA result. Regenerate before publishing.
 - `Top Weekly` means choose ONE strongest weekly story and create ONE image for that story. It never means a weekly image containing several stories.
 - The 08:00 daily summary may list or link all hourly paintings in Markdown, but it must never replace them with a combined 24-story image.
-- Never crop a multi-story collage into separate images and treat the crops as compliant originals. Each published Siema must be generated as its own standalone composition for its own story.
+- Never crop a multi-story collage into separate images and treat the crops as compliant originals. Each published Siema must be generated as its own standalone composition for its own subject.
 
 Pre-publish QA question:
-> Can a viewer describe this image as one news story without mentioning a second story?
+> Can a viewer describe this image as one subject without mentioning a second subject?
 
 If the answer is not an immediate yes, do not publish it.
+
+## CANONICAL SIEMA 2026 SKETCH-PAINT STYLE — LOCKED
+
+The January 2026 series is the visual reference standard. This style is mandatory for Siema News, historical backfill, Top AI lists, AI personalities, explainers and similar editorial series unless the user explicitly requests another style.
+
+### Canvas and medium
+- Exactly one standalone landscape 16:9 image.
+- Warm cream / off-white sketchbook paper as the visible background.
+- Hand-drawn architectural black pen-and-ink line work.
+- Loose expressive watercolor washes with visible handmade imperfections and natural bleeding.
+- Clean, confident diagram drawing rather than photorealistic rendering.
+- No CGI, glossy 3D render, dark-mode sci-fi poster, polished corporate vector art or photographic look.
+
+### Colour discipline
+- Black ink carries the structure.
+- Warm paper and restrained natural neutrals support the scene.
+- MatSiems `#006699` is the ONLY strong technological / explanatory accent colour.
+- Small natural colours may appear where physically necessary, but avoid competing saturated accents.
+- No purple.
+- Avoid red except when the factual concept genuinely requires a danger / blocked-state cue, and keep it minor.
+
+### Composition grammar
+- One coherent wide explanatory scene, not a collection of separate cards.
+- Build a visual thesis from left-to-right, centre-outward, or input→system→result.
+- Use hand-drawn arrows, pipelines, loops, architectural sections, machines, maps, campuses, desks, laboratories, infrastructure, landscapes or other physical metaphors that make the topic understandable at a glance.
+- The central subject should occupy the visual focus; secondary elements explain causes, mechanics, consequences or real-world applications.
+- Prefer a believable physical world plus drawn technical annotations rather than floating abstract sci-fi decoration.
+- Keep generous paper breathing room around major elements.
+
+### Typography and editorial rhythm
+- ONE large hand-painted headline at the top-left.
+- ONE short funny / stoic quote at the bottom-left in handwritten black ink, optionally underlined with a restrained `#006699` brush stroke.
+- ONE handwritten `Siema` signature at the bottom-right, preferably with a small `#006699` underline flourish.
+- Use concise handwritten explanatory labels around the diagram: short phrases, arrows, 2–5 word notes, occasional compact bullet groups.
+- Text exists to clarify the drawing, not to turn the image into a document.
+- Do not use dense paragraphs, fake UI dashboards, newspaper layouts or oversized blocks of copy.
+
+### Visual tone
+- Intelligent, optimistic, slightly witty and practical.
+- “AI architect sketchbook” rather than “marketing poster”.
+- The joke or quote should be dry and memorable, but never undermine factual clarity.
+- Prefer specific real-world physical consequences: compute, power, chips, code, agents, labs, products, cities, science, work, governance, robotics, infrastructure.
+
+### People and personalities
+- For a real-world AI personality, exactly ONE main person is the subject of that image unless additional background people are necessary to explain their work.
+- Depict the public figure respectfully in the same watercolor/ink editorial language; do not turn the image into a glamour portrait.
+- Their face may anchor one side of the composition while their 2026 AI impact unfolds as a diagram around them.
+- Title should normally be the person’s name or a short editorial phrase about their role.
+- The visual story should answer: “Why does this person matter to AI in 2026?”
+
+### Forbidden drift
+Reject and regenerate if the result becomes any of the following:
+- collage, grid, storyboard, montage, contact sheet or split-screen;
+- generic photorealistic portrait;
+- glossy futuristic CGI;
+- dark cyberpunk poster;
+- corporate slide / dashboard;
+- generic stock-tech illustration;
+- unrelated previous-topic residue;
+- multiple main news stories or personalities in one image;
+- missing headline, quote or Siema signature;
+- non-16:9 framing.
+
+Canonical quality test:
+> Does this look like one page torn from the same hand-painted 2026 Siema AI sketchbook as `RUBIN ARRIVES`, `PERSONAL INTELLIGENCE`, `CLAUDE GOES TO WORK`, `LOW-LATENCY AT SCALE`, `THE MODEL GETS PRINCIPLES`, `PRISM FOR SCIENCE`, `AGENTIC VISION`, and `PROJECT GENIE OPENS WORLDS`?
+
+If not, regenerate before publish.
 
 ## Canonical Siema reference
 
@@ -125,15 +192,15 @@ Create:
 - short handwritten title;
 - one funny/stoic quote;
 - concise factual visual thesis;
-- complete image prompt scoped to ONE story only;
+- complete image prompt scoped to ONE subject only;
 - 3–6 tags.
 
 Humour must support the explanation rather than overwhelm it.
 
-For a batch request, finish this workflow for one story before beginning the next story.
+For a batch request, finish this workflow for one subject before beginning the next subject.
 
 ### 5. Canonical visual contract
-Generate exactly ONE standalone landscape 16:9 image for exactly ONE news item.
+Generate exactly ONE standalone landscape 16:9 image for exactly ONE subject and obey the locked Canonical Siema 2026 Sketch-Paint Style above.
 
 SIEMA (OPTIONAL, DEFAULT OFF):
 - Do not include the artist merely because the brand is Siema.
@@ -160,14 +227,14 @@ STYLE:
 - no storyboard;
 - no montage;
 - no multi-story panels;
-- ONE STORY = ONE SCENE = ONE IMAGE.
+- ONE SUBJECT = ONE SCENE = ONE IMAGE.
 
 TEXT:
-- one story title top-left;
+- one subject title top-left;
 - one short quote bottom-left;
 - `Siema` signature bottom-right;
-- minimal readable text only;
-- never include unrelated headlines or model names from other stories.
+- concise diagram labels only;
+- never include unrelated headlines, personalities or model names from other subjects.
 
 ### 6. Timestamp and filename
 Use Europe/London local time at generation.
@@ -228,11 +295,12 @@ The app automatically merges `data/siema-index.json.paintings` into the gallery.
 
 ### 9. Final QA before publish
 Before committing, inspect the generated image and reject it if ANY are true:
-- more than one news story is represented;
-- multiple unrelated headlines/models/events appear;
+- more than one main subject is represented;
+- multiple unrelated headlines/models/events/personalities appear;
 - the composition is a grid, collage, montage, roundup, storyboard or contact sheet;
-- content from a previous story leaked into the current story;
+- content from a previous subject leaked into the current image;
 - the image would need to be cropped into sub-images to become compliant;
+- the result drifts from the locked January-2026 Siema sketch-paint style;
 - the title/quote/signature contract is missing or materially wrong.
 
 Only after passing this QA may the image be published and indexed.
@@ -242,7 +310,7 @@ Use a concise commit message:
 `siema: YYYY-MM-DD HH:mm <title>`
 
 A successful run means ALL are true:
-- one unique standalone image exists in GitHub for one story;
+- one unique standalone image exists in GitHub for one subject;
 - ledger/index updated;
 - gallery metadata updated through the ledger;
 - source recorded;
