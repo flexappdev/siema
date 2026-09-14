@@ -2,7 +2,7 @@
   "version": 1,
   "timezone": "Europe/London",
   "control": {
-    "nextMode": "top_weekly_once",
+    "nextMode": "hourly",
     "authorPolicy": "optional_default_off",
     "indexRequired": true
   },
@@ -23,6 +23,15 @@
       "sourcePublisher": "Reuters",
       "firstSeenAt": "2026-09-10T10:56:00+01:00",
       "topicFingerprint": "2026-09-10-nvidia-australia-ai-data-centres-2gw",
+      "status": "published"
+    },
+    {
+      "title": "PACE THE FRONTIER",
+      "topic": "Anthropic CEO Dario Amodei calls on frontier AI companies to slow capability growth so safety measures and independent evaluation can catch up",
+      "sourceUrl": "https://www.reuters.com/business/anthropic-ceo-urges-ai-companies-slow-model-development-2026-09-12/",
+      "sourcePublisher": "Reuters",
+      "firstSeenAt": "2026-09-14T11:17:00+01:00",
+      "topicFingerprint": "2026-09-12-anthropic-amodei-slow-ai-capability-growth-safety",
       "status": "published"
     }
   ],
@@ -48,6 +57,28 @@
       "topicFingerprint": "2026-09-10-nvidia-australia-ai-data-centres-2gw",
       "imageFile": "public/siema/2026/09/10/2026-09-10_10-56_nvidia-australia-ai-future.webp",
       "prompt": "Create exactly one standalone 16:9 SIEMA Sketch Painting about Nvidia's announced Australian AI data-centre expansion. Hand-drawn architectural pen-and-ink with loose watercolor on warm off-white paper; #006699 as the dominant tech accent; no purple; one coherent Australian scene. Use the canonical Siema reference as the character anchor: tied-back curly hair, rugged beard, black rectangular G3-style smart glasses, black hoodie, relaxed Funny Stoic expression. Show Sydney Harbour and a large believable AI compute campus under construction with cranes and power infrastructure. Title top-left: NVIDIA POWERS AUSTRALIA'S AI FUTURE. Quote bottom-left: Same technology. A bigger horizon. Signature bottom-right: Siema."
+    },
+    {
+      "id": "2026-09-14-1117-pace-the-frontier",
+      "slug": "pace-the-frontier",
+      "title": "PACE THE FRONTIER",
+      "s3Key": "/siema/2026/09/14/2026-09-14_11-17_pace-the-frontier.webp",
+      "year": 2026,
+      "medium": "Digital pen-and-ink + watercolor sketch",
+      "description": "A Siema sketch of Dario Amodei's call for frontier AI labs to slow capability growth while safety, alignment and independent evaluation catch up.",
+      "tags": ["AI", "Anthropic", "Dario Amodei", "AI safety", "frontier models"],
+      "width": 320,
+      "height": 180,
+      "generatedAt": "2026-09-14T11:17:00+01:00",
+      "timezone": "Europe/London",
+      "topic": "Anthropic CEO Dario Amodei calls on frontier AI companies to slow capability growth so safety measures and independent evaluation can catch up",
+      "quote": "Sometimes the bravest thing in tech is to take your foot off the accelerator.",
+      "sourceUrl": "https://www.reuters.com/business/anthropic-ceo-urges-ai-companies-slow-model-development-2026-09-12/",
+      "sourcePublisher": "Reuters",
+      "sourcePublishedAt": "2026-09-12T14:23:00Z",
+      "topicFingerprint": "2026-09-12-anthropic-amodei-slow-ai-capability-growth-safety",
+      "imageFile": "public/siema/2026/09/14/2026-09-14_11-17_pace-the-frontier.webp",
+      "prompt": "Create exactly one standalone 16:9 Siema Original Sketch Paint about Anthropic CEO Dario Amodei's call for frontier AI labs to slow capability growth while safety catches up. Warm off-white sketchbook paper, architectural black pen-and-ink, loose watercolor, #006699 as the only strong accent, no purple, no photorealism, no CGI, no collage/grid/split-screen/storyboard. One coherent scene. Title top-left: PACE THE FRONTIER. Quote bottom-left: Sometimes the bravest thing in tech is to take your foot off the accelerator. Siema signature bottom-right."
     }
   ]
 }
