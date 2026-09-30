@@ -1,10 +1,12 @@
 # Siema Hourly Skill
 
 ## Purpose
-Generate exactly one unique SIEMA SKETCH PAINTING from either:
-1. an explicit topic supplied by the user;
-2. the best new AI story available at run time; or
-3. the strongest unique AI story from the previous 7 days when Top Weekly mode is requested.
+Generate a daily default batch of exactly FIVE unique SIEMA SKETCH PAINTINGS, each about a different underlying AI story, from either:
+1. explicit topic(s) supplied by the user;
+2. the five strongest new unique AI stories available at run time; or
+3. five strongest unique AI stories from the previous 7 days when Top Weekly mode is requested.
+
+Default batch size is **5**. A user may explicitly request another count. The batch size NEVER changes the one-story-per-image rule: five stories means five independently generated standalone image files.
 
 The default repository is `flexappdev/siema`. The default timezone is `Europe/London`.
 
@@ -130,11 +132,11 @@ If the canonical image reference is unavailable to an automated run, prefer in t
 Never invent a materially different Siema.
 
 ## Triggers
-- `Siema live` or `Siema hourly` → choose the latest high-signal unique AI story unless the ledger requests another mode.
+- `Siema live` or `Siema hourly` → choose the five latest/highest-signal unique AI stories unless the ledger requests another mode. Generate and QA them sequentially, one story and one standalone image at a time.
 - `Siema live: <topic>` or `Siema hourly: <topic>` → use the supplied topic.
-- `Siema weekly` or `Siema top weekly` → choose the single strongest unique AI story from the previous 7 days.
+- `Siema weekly` or `Siema top weekly` → choose the five strongest unique AI stories from the previous 7 days, each as its own standalone image.
 - `Siema sketch: <topic>` → same on-demand topic workflow.
-- Hourly scheduled run with no topic → latest unique AI story unless `data/siema-index.json.control.nextMode` overrides it.
+- Scheduled run with no topic → five strongest latest unique AI stories unless `data/siema-index.json.control.nextMode` overrides it.
 
 ## Control flags
 Read optional `control` values from `data/siema-index.json` before topic selection.
@@ -163,7 +165,7 @@ If Top Weekly mode is active, search the previous 7 days and select **one** stro
 
 Do not create a Top-5 board, weekly collage, dashboard or multiple-story recap. Top Weekly means exactly one story.
 
-Otherwise search current news, prioritising:
+Otherwise search current news and select the five strongest mutually distinct, ledger-unique stories, prioritising:
 1. AI model/research launches and breakthroughs
 2. AI infrastructure, chips, compute and energy
 3. major AI company/platform moves
@@ -200,7 +202,7 @@ Humour must support the explanation rather than overwhelm it.
 For a batch request, finish this workflow for one subject before beginning the next subject.
 
 ### 5. Canonical visual contract
-Generate exactly ONE standalone landscape 16:9 image for exactly ONE subject and obey the locked Canonical Siema 2026 Sketch-Paint Style above.
+For EACH selected story, generate exactly ONE standalone landscape 16:9 image for exactly ONE subject and obey the locked Canonical Siema 2026 Sketch-Paint Style above. Process the five default stories sequentially. Never put two selected stories into the same generation prompt or image.
 
 SIEMA (OPTIONAL, DEFAULT OFF):
 - Do not include the artist merely because the brand is Siema.
@@ -319,7 +321,7 @@ A successful run means ALL are true:
 If any required write fails, do not claim the run completed.
 
 ## Scheduled-run output
-Return a compact report with:
+Return one compact batch report with five item results by default. For every item report:
 - mode: HOURLY / TOP_WEEKLY / TOPIC;
 - title/topic;
 - source;
