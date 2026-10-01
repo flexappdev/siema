@@ -12,6 +12,21 @@ The default repository is `flexappdev/siema`. The default timezone is `Europe/Lo
 
 The index is mandatory. Every successful publication must update `data/siema-index.json` and `SIEMA_INDEX.md`.
 
+## ABSOLUTE BATCH ISOLATION — NEVER COLLAGE
+
+For the default batch, **5 SIEMAS means 5 completely separate image-generation calls and 5 separate image files. NEVER ONE IMAGE CONTAINING FIVE STORIES.**
+
+- Never mention "five stories", "top 5", the other four story titles, batch numbering, roundup language, or any other batch item inside an image-generation prompt.
+- Before EVERY image-generation call, construct a clean prompt containing ONLY that story's title, facts, visual thesis, quote, and canonical style instructions.
+- Generate story 1 → inspect → persist/publish if valid → then start story 2 from a clean prompt. Repeat sequentially through story 5.
+- Do NOT ask an image model to generate a batch, set, series, contact sheet, poster, news board, or collection.
+- Do NOT use "1/5", "2/5", story numbers, or collection numbers inside the image itself.
+- Every output file must be a normal standalone 16:9 editorial painting that still makes complete sense if the other four images never existed.
+- If an image contains ANY second story, second headline, unrelated company/event, panel boundary, grid, collage, roundup, or residue from another batch item, reject it immediately. Never crop or salvage it.
+- A failed item does not authorize combining remaining stories. Retry only that ONE story with a fresh isolated prompt.
+
+**Invariant:** batch size controls the NUMBER OF FILES, never the number of stories inside a file.
+
 ## HARD RULE — ONE NEWS ITEM PER IMAGE
 
 This is non-negotiable and overrides any batch convenience, layout preference, or prior prompt context.
@@ -142,7 +157,7 @@ Never invent a materially different Siema.
 Read optional `control` values from `data/siema-index.json` before topic selection.
 
 Supported values:
-- `nextMode: "top_weekly_once"` → the NEXT successful run must select exactly ONE strongest unique AI story from the previous 7 days, not a Top-5 recap. After a successful publish, set `nextMode` back to `"hourly"`.
+- `nextMode: "top_weekly_once"` → the NEXT successful run selects the five strongest unique AI stories from the previous 7 days and produces five separate standalone image files, one per story. It must never create a Top-5 recap image. After the successful batch, set `nextMode` back to `"hourly"`.
 - `authorPolicy: "optional_default_off"` → do not show the Siema artist by default. Include him only when the scene genuinely benefits.
 - `indexRequired: true` → a run cannot be reported as successful until both machine-readable and Markdown indexes are updated.
 
@@ -156,14 +171,14 @@ Never generate before checking uniqueness.
 ### 2. Select a topic
 If a topic is supplied, use it.
 
-If Top Weekly mode is active, search the previous 7 days and select **one** strongest story by a combination of:
+If Top Weekly mode is active, search the previous 7 days and select **five mutually distinct unique stories** by a combination of:
 - global AI significance;
 - novelty;
 - likely long-term importance;
 - evidence quality;
 - visual potential for one coherent Siema sketch.
 
-Do not create a Top-5 board, weekly collage, dashboard or multiple-story recap. Top Weekly means exactly one story.
+Do not create a Top-5 board, weekly collage, dashboard or multiple-story recap. Top Weekly means five separate stories rendered as five separate standalone image files, generated one at a time.
 
 Otherwise search current news and select the five strongest mutually distinct, ledger-unique stories, prioritising:
 1. AI model/research launches and breakthroughs
