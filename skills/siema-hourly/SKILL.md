@@ -1,12 +1,12 @@
 # Siema Hourly Skill
 
 ## Purpose
-Generate a daily default batch of exactly FIVE unique SIEMA SKETCH PAINTINGS, each about a different underlying AI story, from either:
+Generate a daily default batch of exactly TEN unique SIEMA SKETCH PAINTINGS, each about a different underlying AI story, from either:
 1. explicit topic(s) supplied by the user;
-2. the five strongest new unique AI stories available at run time; or
-3. five strongest unique AI stories from the previous 7 days when Top Weekly mode is requested.
+2. the ten strongest new unique AI stories available at run time; or
+3. the ten strongest unique AI stories from the previous 7 days when Top Weekly mode is requested.
 
-Default batch size is **5**. A user may explicitly request another count. The batch size NEVER changes the one-story-per-image rule: five stories means five independently generated standalone image files.
+Default daily batch size is **10**. A user may explicitly request another count. **10 stories = 10 separate image-generation calls = 10 separate standalone 16:9 image files.** Never combine stories in one canvas.
 
 The default repository is `flexappdev/siema`. The default timezone is `Europe/London`.
 
@@ -14,18 +14,26 @@ The index is mandatory. Every successful publication must update `data/siema-ind
 
 ## ABSOLUTE BATCH ISOLATION — NEVER COLLAGE
 
-For the default batch, **5 SIEMAS means 5 completely separate image-generation calls and 5 separate image files. NEVER ONE IMAGE CONTAINING FIVE STORIES.**
+For the default daily batch, **10 SIEMAS means 10 completely separate image-generation calls and 10 separate image files. NEVER ONE IMAGE CONTAINING TWO OR MORE STORIES.**
 
-- Never mention "five stories", "top 5", the other four story titles, batch numbering, roundup language, or any other batch item inside an image-generation prompt.
+- Never mention "ten stories", "top 10", any of the other nine story titles, batch numbering, roundup language, or any other batch item inside an image-generation prompt.
 - Before EVERY image-generation call, construct a clean prompt containing ONLY that story's title, facts, visual thesis, quote, and canonical style instructions.
-- Generate story 1 → inspect → persist/publish if valid → then start story 2 from a clean prompt. Repeat sequentially through story 5.
+- Generate story 1 → inspect → persist/publish if valid → then start story 2 from a clean prompt. Repeat sequentially through story 10.
 - Do NOT ask an image model to generate a batch, set, series, contact sheet, poster, news board, or collection.
 - Do NOT use "1/5", "2/5", story numbers, or collection numbers inside the image itself.
-- Every output file must be a normal standalone 16:9 editorial painting that still makes complete sense if the other four images never existed.
+- Every output file must be a normal standalone 16:9 editorial painting that still makes complete sense if the other nine images never existed.
 - If an image contains ANY second story, second headline, unrelated company/event, panel boundary, grid, collage, roundup, or residue from another batch item, reject it immediately. Never crop or salvage it.
 - A failed item does not authorize combining remaining stories. Retry only that ONE story with a fresh isolated prompt.
 
 **Invariant:** batch size controls the NUMBER OF FILES, never the number of stories inside a file.
+
+## NEVER COLLAGE — ZERO EXCEPTIONS
+
+A collage, grid, montage, contact sheet, split screen, diptych, triptych, multi-panel image, roundup poster, or canvas containing more than one story is **always invalid**, even if the user asks to generate multiple images "at once".
+
+"Generate 10 images" means call the image generator ten times. It NEVER means request ten images, ten stories, or multiple scenes inside one generation.
+
+Each generation prompt must contain exactly ONE story and must not contain the titles, summaries, companies, events, numbering, or visual concepts of any other daily story.
 
 ## HARD RULE — ONE NEWS ITEM PER IMAGE
 
@@ -147,17 +155,17 @@ If the canonical image reference is unavailable to an automated run, prefer in t
 Never invent a materially different Siema.
 
 ## Triggers
-- `Siema live` or `Siema hourly` → choose the five latest/highest-signal unique AI stories unless the ledger requests another mode. Generate and QA them sequentially, one story and one standalone image at a time.
+- `Siema live` or `Siema hourly` → choose the ten latest/highest-signal unique AI stories unless the ledger requests another mode. Generate and QA them sequentially, one story and one standalone image at a time.
 - `Siema live: <topic>` or `Siema hourly: <topic>` → use the supplied topic.
-- `Siema weekly` or `Siema top weekly` → choose the five strongest unique AI stories from the previous 7 days, each as its own standalone image.
+- `Siema weekly` or `Siema top weekly` → choose the ten strongest unique AI stories from the previous 7 days, each as its own standalone image.
 - `Siema sketch: <topic>` → same on-demand topic workflow.
-- Scheduled run with no topic → five strongest latest unique AI stories unless `data/siema-index.json.control.nextMode` overrides it.
+- Scheduled run with no topic → ten strongest latest unique AI stories unless `data/siema-index.json.control.nextMode` overrides it.
 
 ## Control flags
 Read optional `control` values from `data/siema-index.json` before topic selection.
 
 Supported values:
-- `nextMode: "top_weekly_once"` → the NEXT successful run selects the five strongest unique AI stories from the previous 7 days and produces five separate standalone image files, one per story. It must never create a Top-5 recap image. After the successful batch, set `nextMode` back to `"hourly"`.
+- `nextMode: "top_weekly_once"` → the NEXT successful run selects the ten strongest unique AI stories from the previous 7 days and produces ten separate standalone image files, one per story. It must never create a Top-5 recap image. After the successful batch, set `nextMode` back to `"hourly"`.
 - `authorPolicy: "optional_default_off"` → do not show the Siema artist by default. Include him only when the scene genuinely benefits.
 - `indexRequired: true` → a run cannot be reported as successful until both machine-readable and Markdown indexes are updated.
 
@@ -171,16 +179,16 @@ Never generate before checking uniqueness.
 ### 2. Select a topic
 If a topic is supplied, use it.
 
-If Top Weekly mode is active, search the previous 7 days and select **five mutually distinct unique stories** by a combination of:
+If Top Weekly mode is active, search the previous 7 days and select **ten mutually distinct unique stories** by a combination of:
 - global AI significance;
 - novelty;
 - likely long-term importance;
 - evidence quality;
 - visual potential for one coherent Siema sketch.
 
-Do not create a Top-5 board, weekly collage, dashboard or multiple-story recap. Top Weekly means five separate stories rendered as five separate standalone image files, generated one at a time.
+Do not create a Top-5 board, weekly collage, dashboard or multiple-story recap. Top Weekly means five separate stories rendered as ten separate standalone image files, generated one at a time.
 
-Otherwise search current news and select the five strongest mutually distinct, ledger-unique stories, prioritising:
+Otherwise search current news and select the ten strongest mutually distinct, ledger-unique stories, prioritising:
 1. AI model/research launches and breakthroughs
 2. AI infrastructure, chips, compute and energy
 3. major AI company/platform moves
@@ -217,7 +225,7 @@ Humour must support the explanation rather than overwhelm it.
 For a batch request, finish this workflow for one subject before beginning the next subject.
 
 ### 5. Canonical visual contract
-For EACH selected story, generate exactly ONE standalone landscape 16:9 image for exactly ONE subject and obey the locked Canonical Siema 2026 Sketch-Paint Style above. Process the five default stories sequentially. Never put two selected stories into the same generation prompt or image.
+For EACH selected story, generate exactly ONE standalone landscape 16:9 image for exactly ONE subject and obey the locked Canonical Siema 2026 Sketch-Paint Style above. Process the ten default stories sequentially. Never put two selected stories into the same generation prompt or image.
 
 SIEMA (OPTIONAL, DEFAULT OFF):
 - Do not include the artist merely because the brand is Siema.
@@ -336,7 +344,7 @@ A successful run means ALL are true:
 If any required write fails, do not claim the run completed.
 
 ## Scheduled-run output
-Return one compact batch report with five item results by default. For every item report:
+Return one compact batch report with ten item results by default. For every item report:
 - mode: HOURLY / TOP_WEEKLY / TOPIC;
 - title/topic;
 - source;
