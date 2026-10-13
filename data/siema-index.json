@@ -33,6 +33,15 @@
       "firstSeenAt": "2026-09-14T11:17:00+01:00",
       "topicFingerprint": "2026-09-12-anthropic-amodei-slow-ai-capability-growth-safety",
       "status": "published"
+    },
+    {
+      "title": "ANTHROPIC WARNS AI MODELS MAY SOON SELF-REPLICATE",
+      "topic": "Anthropic experiments suggest small AI models may be months away from self-replicating across commercial internet-of-things devices without relying on centralized data centres",
+      "sourceUrl": "https://www.reuters.com/business/ai-models-may-soon-self-replicate-without-access-data-centers-anthropic-warns-2026-10-13/",
+      "sourcePublisher": "Reuters",
+      "firstSeenAt": "2026-10-13T13:18:00+01:00",
+      "topicFingerprint": "2026-10-13-anthropic-small-ai-models-iot-self-replication",
+      "status": "published"
     }
   ],
   "paintings": [
@@ -79,6 +88,28 @@
       "topicFingerprint": "2026-09-12-anthropic-amodei-slow-ai-capability-growth-safety",
       "imageFile": "public/siema/2026/09/14/2026-09-14_11-17_pace-the-frontier.webp",
       "prompt": "Create exactly one standalone 16:9 Siema Original Sketch Paint about Anthropic CEO Dario Amodei's call for frontier AI labs to slow capability growth while safety catches up. Warm off-white sketchbook paper, architectural black pen-and-ink, loose watercolor, #006699 as the only strong accent, no purple, no photorealism, no CGI, no collage/grid/split-screen/storyboard. One coherent scene. Title top-left: PACE THE FRONTIER. Quote bottom-left: Sometimes the bravest thing in tech is to take your foot off the accelerator. Siema signature bottom-right."
+    },
+    {
+      "id": "2026-10-13-1318-anthropic-self-replicate",
+      "slug": "anthropic-warns-ai-models-may-soon-self-replicate",
+      "title": "ANTHROPIC WARNS AI MODELS MAY SOON SELF-REPLICATE",
+      "s3Key": "/siema/2026/10/13/2026-10-13_13-18_anthropic-self-replicate.webp",
+      "year": 2026,
+      "medium": "Digital pen-and-ink + watercolor sketch",
+      "description": "A Siema sketch explaining Anthropic's warning that increasingly capable small AI models may soon be able to copy themselves across ordinary internet-connected devices without a central data-centre host.",
+      "tags": ["AI", "Anthropic", "AI safety", "cybersecurity", "IoT", "agents"],
+      "width": 1672,
+      "height": 941,
+      "generatedAt": "2026-10-13T13:18:00+01:00",
+      "timezone": "Europe/London",
+      "topic": "Anthropic experiments suggest small AI models may be months away from self-replicating across commercial internet-of-things devices without relying on centralized data centres",
+      "quote": "Give an idea a laptop, and it finds more laptops.",
+      "sourceUrl": "https://www.reuters.com/business/ai-models-may-soon-self-replicate-without-access-data-centers-anthropic-warns-2026-10-13/",
+      "sourcePublisher": "Reuters",
+      "sourcePublishedAt": "2026-10-13T05:14:50Z",
+      "topicFingerprint": "2026-10-13-anthropic-small-ai-models-iot-self-replication",
+      "imageFile": "public/siema/2026/10/13/2026-10-13_13-18_anthropic-self-replicate.webp",
+      "prompt": "Create exactly one standalone landscape 16:9 Siema Original Sketch Paint about Anthropic's warning that small AI models may soon be able to self-replicate across ordinary internet-connected devices. One coherent explanatory scene only: a small AI model moving from one everyday device to another through a home network, using hand-drawn arrows to explain replication. Warm cream sketchbook paper, architectural black pen-and-ink, loose expressive watercolor, #006699 as the only strong accent, no purple, no photorealism, no CGI, no collage, no grid, no panels, no unrelated companies or events. Title top-left: ANTHROPIC WARNS AI MODELS MAY SOON SELF-REPLICATE. Quote bottom-left: Give an idea a laptop, and it finds more laptops. Handwritten Siema signature bottom-right."
     }
   ]
 }

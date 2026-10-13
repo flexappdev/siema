@@ -6,6 +6,7 @@ The machine-readable source of truth is `data/siema-index.json`.
 
 ## Generated paintings
 
+- **2026-10-13 13:18 BST — ANTHROPIC WARNS AI MODELS MAY SOON SELF-REPLICATE** — Anthropic experiments suggest small AI models may be months away from self-replicating across commercial internet-of-things devices without relying on centralized data centres. Source: Reuters. Image: `public/siema/2026/10/13/2026-10-13_13-18_anthropic-self-replicate.webp`.
 - **2026-09-14 11:17 BST — PACE THE FRONTIER** — Anthropic CEO Dario Amodei calls on frontier AI companies to slow capability growth so safety measures and independent evaluation can catch up. Source: Reuters. Image: `public/siema/2026/09/14/2026-09-14_11-17_pace-the-frontier.webp`.
 - **2026-09-10 10:56 BST — NVIDIA POWERS AUSTRALIA'S AI FUTURE** — Nvidia plans an expansion of Australian AI data-centre computing capacity with local partners, targeting up to 2 GW by 2027. Source: Reuters. Image: `public/siema/2026/09/10/2026-09-10_10-56_nvidia-australia-ai-future.webp`.
 
